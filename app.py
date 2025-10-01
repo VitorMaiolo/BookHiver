@@ -1,15 +1,20 @@
-from flask import Flask, render_template, request, url_for, session, redirect, flash
+from flask import Flask, render_template, request, url_for, session, redirect
+from dotenv import load_dotenv
 import psycopg2
+import os
+
+load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = "BookHiver25477Sec"
 
 def get_connection():
     return psycopg2.connect(
-        host="localhost",
-        dbname="bookhiver",
-        user="postgres",
-        password="1234"
+        host=os.getenv('DB_HOST'),
+        dbname=os.getenv('DB_NAME'),
+        user=os.getenv('DB_USER'),
+        password=os.getenv('DB_PASSWORD'),
+        port=os.getenv('DB_PORT')
     )
 
 #Definição da rota inicial para a tela de login
