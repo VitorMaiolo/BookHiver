@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/login.css">
+    <link rel="shortcut icon" href="/static/img/icon.png" type="image/png">
+
+    <!-- Link Google Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <title>BookHive</title>
+</head>
+<body class="body-login">
+    <div class="left-login"> <img src="/static/img/login-img.png" alt="LibraryImage"> </div>
+
+    <div class="right-login">
+        <div class="login-form">
+            <h1>BookHive</h1>
+            <p>Faça login para acessar</p>
+
+            <form action="/main" method="POST">
+
+                {% if error%}
+                    <div class="errorAlert">
+                        {{ error }}
+                    </div>
+                {% endif %}
+
+                <input type="text" name="user" placeholder="Login" id="login-data" class="form-input" autocomplete="off">
+                <input type="password" name="password" id="password-data" placeholder="Senha" class="form-input">
+                <div class="show-password">
+                    <input type="checkbox" id="togglePassword">
+                    <label for="togglePassword">Mostrar senha</label>
+                </div>
+
+                <button type="submit" onclick="login(event)">Entrar</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script>
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('password-data');
+
+    togglePassword.addEventListener('change', function () {
+        passwordInput.type = this.checked ? 'text' : 'password';
+    })
+</script>
+
+</html>

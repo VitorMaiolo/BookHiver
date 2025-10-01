@@ -1,0 +1,18 @@
+<div class="adicionar-leitor">
+    {% if error %}
+    <div class="errorAlert">{{ error }}</div>
+    {% endif %}
+
+    {% if success %}
+    <div class="successAlert">{{ success }}</div>
+    {% endif %}
+    
+    <form action="/cadastrasLeitor" method="POST" class="form-adicionar-leitor">
+        <input type="text" placeholder="Nome Completo" required name="registerReaderName">
+        <input type="text" placeholder="CPF (somente números)" required maxlength="11" name="registerReaderCPF">
+        <input type="email" placeholder="Email" required name="registerReaderEmail">
+        <input type="text" placeholder="Telefone"required name="registerReaderPhone">
+
+        <button type="submit">Enviar</button>
+    </form>
+</div>

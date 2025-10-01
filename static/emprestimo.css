@@ -1,0 +1,135 @@
+.emprestimo-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-emprestimos-bar{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #263238;
+}
+
+.emprestados-data{
+    width: 40%;
+    height: 70%;
+    background-color: #f4f4f4;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.emprestimo-devolucao{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+}
+
+.fazer-emprestimo, .fazer-devolucao{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.fazer-emprestimo h3{
+    margin-top: 20px;
+}
+
+.fazer-emprestimo form{
+    width: 90%;
+    height: 60%;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 20px;
+} 
+
+.fazer-emprestimo form input{
+    width: 90%;
+    height: 15%;
+    border-radius: 10px;
+    padding-left: 5px;
+    color: black;
+    outline: none;
+    background-color: #E0E0E0;
+    border: #BDBDBD solid 1px;
+}
+
+.fazer-emprestimo form input::placeholder{
+    color: black;
+}
+
+.fazer-emprestimo form button{
+    width: 90%;
+    height: 15%;
+    border: none;
+    border-radius: 10px;
+    background-color: #9BC53D;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.fazer-emprestimo form button:hover{
+    transform: scale(1.05);
+}
+
+.fazer-devolucao h3{
+    margin-top: 20px;
+}
+
+.fazer-devolucao form{
+    width: 90%;
+    height: 60%;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.fazer-devolucao form input{
+    width: 90%;
+    height: 15%;
+    border-radius: 10px;
+    padding-left: 5px;
+    color: black;
+    outline: none;
+    background-color: #E0E0E0;
+    border: #BDBDBD solid 1px;
+    margin-top: 22px;
+}
+
+.fazer-devolucao form input::placeholder{
+    color: black;
+}
+
+.fazer-devolucao form button{
+    width: 90%;
+    height: 15%;
+    border: none;
+    border-radius: 10px;
+    background-color: #4285F4;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 90px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.fazer-devolucao form button:hover{
+    transform: scale(1.05);
+}

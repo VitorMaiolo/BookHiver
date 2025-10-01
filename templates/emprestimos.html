@@ -1,0 +1,78 @@
+<div class="emprestimo-container">
+    <nav class="info-emprestimos-bar">
+
+        {% if emprestimos %}
+        <div class="emprestados-data">
+            <h3>Empréstimos Ativos</h3>
+            <p>{{ emprestimos }}</p>
+        </div>
+        {% else %}
+        <div class="emprestados-data">
+            <h3>Empréstimos Ativos</h3>
+            <p>0</p>
+        </div>
+        {% endif %}
+
+
+        {% if atrasados %}
+        <div class="emprestados-data">
+            <h3>Empréstimos Atrasados</h3>
+            <p>{{ atrasados }}</p>
+        </div>
+        {% else %}
+        <div class="emprestados-data">
+            <h3>Empréstimos Atrasados</h3>
+            <p>0</p>
+        </div>
+        {% endif %}
+    </nav>
+
+    <div class="emprestimo-devolucao">
+
+        <section class="fazer-emprestimo">
+            <h3>Registrar Empréstimo</h3>
+
+            <form action="/registerBorrow" method="POST" id="form-emprestimo">
+                <input type="text" name="borrowReaderName" id="" placeholder="Nome Completo">
+                <input type="date" name="borrowDate" id="dataEmprestimo" placeholder="Data do Empréstimo">
+                <input type="number" name="borrowISBN" id="" placeholder="Código ISBN (somente números)">
+                <button>Registrar Empréstimo</button>
+            </form>
+
+             {% if error %}
+                <div class="errorAlert" id="errorEmprestimo">
+                    {{ error }}
+                </div>
+            {% endif %}
+
+            {% if message %}
+                <div class="successAlert" id="successEmprestimo">
+                    {{ message }}
+                </div>
+            {% endif %} 
+        </section>
+
+        <section class="fazer-devolucao">
+            <h3>Registrar Devolução</h3>
+            
+            <form action="/registerReturn" method="POST" id="form-devolucao">
+                <input type="text" placeholder="Nome Completo" required>
+                <input type="number" placeholder="Código ISBN (somente números)" name="retunISBN">
+                <button>Registrar Devolução</button>
+            </form>
+
+            {% if return_error %}
+                <div class="errorAlert" id="errorEmprestimo">
+                    {{ return_error }}
+                </div>
+            {% endif %}
+
+            {% if return_message %}
+                <div class="successAlert" id="successEmprestimo">
+                    {{ return_message }}
+                </div>
+            {% endif %} 
+        </section>
+    </div>
+</div>
+

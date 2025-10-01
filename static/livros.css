@@ -1,0 +1,243 @@
+.livros-btn{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.livros-btn button{
+    padding: 10px;
+    width: 20%;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    font-weight: 600;
+}
+
+#opt-pesquisar-livro{ background-color: #4285F4; transition: transform 0.3s ease; }
+#opt-pesquisar-livro:hover{ transform: scale(1.05);}
+
+#opt-cadastrar-livro{ background-color: #9BC53D; transition: transform 0.3s ease; }
+#opt-cadastrar-livro:hover{ transform: scale(1.05); }
+
+#opt-excluir-livro{ background-color: #E53935; transition: transform 0.3s ease; }
+#opt-excluir-livro:hover{ transform: scale(1.05); }
+
+
+.pesquisar-livro-bar{
+    width: 100%;
+    height: 60px;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.pesquisar-livro-bar input{
+    width: 30%;
+    padding: 5px;
+    border-radius: 20px;
+    outline: none;
+    border: 1px solid #ccc;
+}
+
+.pesquisar-livro-bar a{
+    width: 10%;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: #4285F4;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    font-size: small;
+}
+
+#pesquisar-livro-titulo{ margin-left: 10px; }
+#pesquisar-livro-isbn{ margin-left: 30px; }
+
+.livroContent{
+    width: 100%;
+    height: 80%;
+    overflow: auto;
+}
+
+.livros-table {
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+.livros-table th{
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    width: 20%;
+}
+
+.livros-table td{
+    padding: 5px;
+    border: 1px solid #ccc;
+    text-align: left;
+    width: 20%;
+    font-size: small;
+}
+
+.livros-table th {
+    background-color: #263238;
+    color: white;
+}
+
+.livros-table td button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.livros-table .edit-btn { 
+    background-color: #FFC100;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.livros-table .delete-btn { 
+    background-color: #E53935;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.livros-table .info-btn {
+    background-color: #4285F4; 
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.add-livro-section {
+    width: 100%;
+    height: 100%;
+}
+
+.add-livro-section form{
+    width: 100%;
+    height: 100%;
+}
+
+.formDiv{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.addSecInputs{
+    width: 30%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #f4f4f4;
+    border: none;
+}
+
+.addSecInputs input{
+    width: 60%;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: #E0E0E0;
+    border: #BDBDBD solid 1px;
+}
+
+.addSecInputs input::placeholder{
+    color: black;
+    padding-left: 5px;
+}
+
+.addSecInputs select{
+    background-color: #E0E0E0;
+    border: #BDBDBD solid 1px;
+    color: black;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.addButtonSec{
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addButtonSec button{
+    padding: 15px;
+    border: none;
+    border-radius: 20px;
+    background-color: #9BC53D;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.border-r-1{ border-radius: 20px 0 0 20px; }
+.border-r-2{ border-radius: 0 20px 20px 0; }
+
+.popup-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+}
+
+.popup button{
+    margin: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.confirm{
+    background-color: #e63946;
+    color: white;
+}
+
+.cancelar{
+    background-color: #ccc;
+}

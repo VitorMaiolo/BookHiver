@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/static/main.css">
+    <link rel="stylesheet" href="/static/edit.css">
+    <link rel="shortcut icon" href="/static/img/icon.png" type="image/png">
+
+    <!-- Link Google Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <title>{{ titulo }}</title>
+</head>
+<body class="body-main">
+    <div class="title-bar">
+        <div class="title"> <h1>BookHive</h1> </div>
+        <div class="addicional-info-bar">
+            <p>Biblioteca Municipal de Piracicaba</p>
+        </div>
+    
+        <!-- <div class="dropdown">
+            <a href="/logout"><img src="/static/img/account-icon.png" alt="." class="account-icon"></a>
+        </div> -->
+    </div>
+
+    <main class="editMain">
+        {% if infos %}
+        <div class="editBook">
+
+            <!-- <div class="titleEdit">
+                <h5>{{ titulo }}</h5>
+            </div> -->
+
+    
+            <form action='{{ url_for('updateBook', book_id = infos[0]) }}' class="formEdit" method="POST">
+                <label for="">Título</label>
+                <input type="text" placeholder="Título" required value="{{ infos[1] }}" name="upTitle">
+
+                <label for="">Autor(a)</label>
+                <input type="text" placeholder="Autor(a)" required value="{{ infos[2] }}" name="upAuthor">
+
+                <label for="">Editora</label>
+                <input type="text" placeholder="Editora" required value="{{ infos[3] }}" name="upEditor">
+
+                <label for="">Ano de publicação</label>
+                <input type="text" placeholder="Ano de publicação" required value="{{ infos[4] }}" name="upYear">
+
+                <label for="">Quantidade de páginas</label>
+                <input type="text" placeholder="Quantidade de páginas" required value="{{ infos[8] }}" name="upPages">
+
+                <label for="">ISBN</label>
+                <input type="text" placeholder="ISBN (somente números)"required value="{{ infos[5] }}" name="upISBN">
+
+                <button id="updateEdit">Atualizar</button>
+                
+            </form>
+            <button id="cancelEdit" onclick="cancel()">Cancelar</button>
+        </div>
+        {% endif %}
+
+
+        {% if infoBook %}
+        <div class="editBook">
+
+            <!-- <div class="titleEdit">
+                <h5>{{ titulo }}</h5>
+            </div> -->
+
+            <div class="formEdit">
+                <h5>Título</h5>
+                <p>{{ infoBook[1] }}</p>
+
+                <h5>Autor(a)</h5>
+                <p>{{ infoBook[2] }}</p>
+
+                <h5>Editora</h5>
+                <p>{{ infoBook[3] }}</p>
+
+                <h5>Ano de publicação</h5>
+                <p>{{ infoBook[4] }}</p>
+
+                <h5>Quantidade de páginas</h5>
+                <p>{{ infoBook[8] }}</p>
+
+                <h5>ISBN</h5>
+                <p>{{ infoBook[5] }}</p>
+
+            </div>   
+            <button id="cancelEdit" onclick="cancel()">Cancelar</button>
+        </div>
+        {% endif %}
+        
+    </main>
+    
+</body>
+<script>
+    function logout() {
+        window.location.href = '/'
+    }
+
+    function cancel() {
+        window.close();
+    }
+</script>
+<script src="/static/main.js"></script>
+</html>

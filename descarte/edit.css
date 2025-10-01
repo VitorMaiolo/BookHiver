@@ -1,0 +1,73 @@
+.editMain{
+    width: 100%;
+    height: 90%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.editBook{
+    background-color: #f4f4f4;
+    width: 30%;
+    height: 95%;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+
+.formEdit { 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 80%;
+    height: 90%;
+    align-items: center;
+}
+.editBook form input {
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #E0E0E0;
+    border: #BDBDBD solid 1px;
+    color: black;
+    width: 100%;
+}
+
+.editBook form input::placeholder{color: black;}
+
+.titleEdit{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+}   
+
+.titleEdit img{ width: 25px; }
+
+.formEdit button{
+    border: none;
+    width: 70%;
+    padding: 2px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+
+#updateEdit{ background-color: #9BC53D; }
+#cancelEdit { 
+    background-color: #E53935;
+    border: none;
+    width: 55%;
+    padding: 2px;
+    border-radius: 10px;
+    font-weight: 500;
+
+}
