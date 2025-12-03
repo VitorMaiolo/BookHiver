@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Raleway", sans-serif;
+}
+
+.body-login{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #3e3932; */
+    background-color: #263238;
+}
+
+.left-login{
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 0px 50px 50px 0px;
+    background-color: #fff;
+}
+
+.left-login img{
+    width: 70%;
+    height: auto;
+}
+
+.right-login{
+    /* background-color: #3e3932; */
+    background-color: #263238;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.login-form{
+    width: 60%;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    color: #FFC100;
+}
+
+.login-form h1{
+   color: #fff;
+   background-color: #FFC100;
+   width: 60%;
+   height: 10%;
+   justify-content: center;
+   align-items: center;
+   display: flex;
+   flex-direction: column;
+   border-radius: 5px; 
+}
+
+.login-form{ color: #fff;}
+
+.login-form form{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 60%;
+    height: auto;
+}
+
+.form-input{
+    background-color: #51425f;
+    border: none;
+    padding: 20px;
+    color: #fff;
+    outline: none;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+}
+.form-input:focus { box-shadow: -5px 0 0 0 #FFC100; }
+
+.form-input::placeholder{ color: #fff; }
+
+
+.login-form form button{
+    margin-top: 20px;
+    background-color: #FFC100;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.login-form button:hover{
+    box-shadow: 0 0 15px 5px rgba(255, 193, 0, 0.7);
+    transform: scale(1.03);
+}
+
+.show-password input[type="checkbox"]{
+    accent-color: #FFC100;
+    border: none;
+    cursor: pointer;
+}
+
+.errorAlert {
+    background-color: #ffe0e0;
+    color: #d10000;
+    border: 1px solid #d10000;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.successAlert{
+    background-color: #e6ffed;
+    color: #0f730c; 
+    border: 1px solid #0f730c;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: center;
+}

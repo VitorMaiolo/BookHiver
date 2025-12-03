@@ -1,0 +1,62 @@
+<div class="pesquisar-livro-bar">
+    <input type="text" id="pesquisar-livro-titulo" placeholder="Pesquise por título" name="pesquisar-livro-titulo">
+    <a href="">Pesquisar</a>
+    <!-- <button>Pesquisar</button> -->
+
+    <input type="text" id="pesquisar-livro-isbn" placeholder="Pesquise por ISBN" name="pesquisar-livro-isbn">
+    <a href="">Pesquisar</a>
+    <!-- <button>Pesquisar</button> -->
+</div>
+
+<div class="listBooksTable">
+    {% if error %}
+        <div class="errorAlert"> {{ error }} </div>
+    {% endif %}
+
+    {% if livros %}
+    <div class="scroll-table">
+    <table class="livros-table">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Autor (a)</th>
+                <th>Editora</th>
+                <th>ISBN</th>
+                <!-- <th>Status</th> -->
+                <th>Ações</th>
+            </tr>
+        </thead>
+
+                        
+        <tbody id="livros-tbody">
+            {% for livro in livros %}
+            <tr>
+                <td>{{ livro[0] }}</td>
+                <td>{{ livro[1] }}</td>
+                <td>{{ livro[4] }}</td>
+                <td>{{ livro[2] }}</td>
+                <!-- <td>{{ livro[3] }}</td> -->
+                <td>
+                    <a href= {{ url_for('updateBook', book_id = livro[3]) }} class="edit-btn" target="_blank">Editar</a>
+                    <button class="delete-btn" onclick="abrirPopupDelete('{{ livro[3] }}', 2)">Excluir</button>
+                    <a href= {{ url_for('infoBook', book_id = livro[3]) }} class="info-btn" target="_blank">Info</a>
+                    
+                </td>
+            </tr>
+            {% endfor %}
+           
+        </tbody>
+    </table>
+    </div>
+    {% else %}
+        <p>Nenhum livro encontrado.</p>
+    {% endif %}
+</div>
+
+<div class="popup-overlay" id="popupBook">
+    <div class="popup">
+        <p>Tem certeza que deseja excluir?</p>
+        <button class="confirm" onclick="confirmarExclusao(2)">Excluir</button>
+        <button class="cancelar" onclick="fecharPopup(2)">Cancelar</button>
+    </div>
+</div>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/static/main.css">
+    <link rel="stylesheet" href="/static/dashboard.css">
+    <link rel="stylesheet" href="/static/emprestimo.css">
+    <link rel="stylesheet" href="/static/leitores.css">
+    <link rel="stylesheet" href="/static/livros.css">
+
+    <link rel="shortcut icon" href="/static/img/icon.png" type="image/png">
+
+    <!-- Link Google Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <title>BookHive - Gerenciamento</title>
+</head>
+<body class="body-main">
+    <div class="title-bar">
+        <div class="title"> <h1>BookHive</h1> </div>
+        <div class="addicional-info-bar">
+            <p>Sistema de Gerenciamento de Biblioteca</p>
+        </div>
+        
+        <div class="dropdown">
+            <a href="/logout"><img src="/static/img/logout-icon.png" alt="." class="account-icon"></a>
+        </div>
+    </div>
+
+    <main>
+        <section class="resource-buttons" onclick="carregarTela(dashboard)">
+            <!-- Botão de dashboard -->
+            <div class="resource-item" id="btn-dashboard">
+                <a href="">
+                    <img src="/static/img/dashboard-icon.png" alt=".">
+                    <p>Dasboard</p>
+                </a>
+            </div>
+            
+            <!-- Botão de empréstimos -->
+            <div class="resource-item" id="btn-emprestimos">
+                <a href="">
+                    <img src="/static/img/borrow-icon.png" alt=".">
+                    <p>Empréstimos</p>
+                </a>
+            </div>
+
+            <!-- Botão de leitores -->
+            <div class="resource-item" id="btn-leitores">
+                <a href="">
+                    <img src="/static/img/reader-icon.png" alt=".">
+                    <p>Leitores</p>
+                </a>
+            </div>
+
+            <!-- Botão de livros -->
+             
+            <div class="resource-item" id="btn-livros">
+                <a href="">
+                    <img src="/static/img/books-icon.png" alt=".">
+                    <p>Livros</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="main-info" id="main-info">
+
+            <!-- As telas aparecerão aqui -->
+
+
+        </section>
+
+    </main>
+
+    <footer class="footer-main">
+        <p>Copyright₢ 2025 BookHive - Developed By Vitor Joaquim</p>
+    </footer>
+</body>
+<script>
+    function logout() {
+        window.location.href = '/'
+    }
+</script>
+<script src="/static/main.js"></script>
+</html>

@@ -1,0 +1,13 @@
+🎨 Paleta Expandida:
+Propósito	                   Cor Hex	        Nome Descritivo
+Principal fundo escuro	        #3e3932	   Marrom acinzentado escuro
+Texto/fundo claro	            #FFFFFF	   Branco
+Cor destaque (botões)	        #FFC100	   Amarelo vibrante
+Input escuro	                #51425f	   Roxo acinzentado escuro
+Cor secundária escura	        #2C2A26	   Cinza escuro profundo
+Amarelo escuro (hover)	        #E6B800	   Amarelo ouro
+Roxo claro	                    #9E89B8	   Lavanda escura
+Cinza claro	                    #C8C8C8	   Cinza neutro
+Verde suave (sucesso)	        #9BC53D	   Verde lima suave
+Vermelho suave (erro)	        #F25F5C	   Vermelho coral
+Azul para links	                #4285F4	   Azul Google

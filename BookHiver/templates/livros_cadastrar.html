@@ -1,0 +1,73 @@
+<div class="add-livro-section">
+    {% if success %}
+        <div class="successAlert"> {{ success }}</div>
+    {% endif %}
+
+    {% if error %}
+        <div class="errorAlert"> {{error}} </div>
+    {% endif %}
+    
+    <form action="/cadastrarLivro" method="POST" id="form-cadastrar-livro">
+        <div class="formDiv">
+        <div class="addSecInputs border-r-1">
+            <input type="text" id="livro-titulo" placeholder="Título" required name="tituloLivro">
+            <input type="text" id="livro-autores" placeholder="Autor(a)" required name="autorLivro">
+            <input type="text" id="livro-editora" placeholder="Editora" required name="editoraLivro">
+            <input type="text" id="livro-ano" placeholder="Ano de publicação" required name="anoLivro">
+        </div>    
+        <div class="addSecInputs border-r-2">
+            <input type="text" id="livro-qtde-paginas" placeholder="Quantidade de páginas" required name="numPaginas">
+            <input type="text" id="livro-isbn" placeholder="ISBN (somente números)"required name="isbnLivroCad" autocomplete="off">  
+            <select id="livro-genero" required name="generoLivro">
+                <option value="none" disabled selected hidden>Gênero</option>
+                <option value="ficcao_policial_inglesa">Ficção Policial Inglesa</option>
+                <option value="ficcao_inglesa">Ficção Inglesa</option>
+                <option value="romance">Romance</option>
+                <option value="biografia">Biografia</option>
+                <option value="ciencias">Ciências</option>
+                <option value="autoajuda">Autoajuda</option>
+                <option value="fabula_francesa">Fábula Francesa</option>
+                <option value="historia">História</option>
+                <option value="romance_brasileiro">Romance Brasileiro</option>
+            </select>
+            <select id="livro-idioma" required name="idiomaLivro">
+                <option value="none" disabled selected hidden>Idioma</option>
+                <option value="portugues">Português</option>
+                <option value="ingles">Inglês</option>
+            </select>
+        </div>
+        </div>   
+        <div class="addButtonSec">
+            <button type="submit">Cadastrar Livro</button>
+        </div>
+    </form>
+</div>
+
+<!-- <script>
+    const generos = [
+        {value: "fantasia", text: "Fantasia"},
+        {value: "ficcao_policial_inglesa", text: "Ficção Policial Inglesa"},
+        {value: "biografia", text: "Biografia"},
+        {value: "romance", text: "Romance"}
+    ];
+
+    const idiomas = [
+        {value: "portugues", text: "Português"},
+        {value: "ingles", text: "Inglês"}
+    ];
+
+    function addOptSelect(selectId, options) {
+        const select = document.getElementById(selectId);
+        options.forEach(opt => {
+            const option = document.createElement("option");
+            option.value = opt.value;
+            option.textContent = opt.text;
+            select.appendChild(option);
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        addOptSelect("livro-genero", generos);
+        addOptSelect("livro-idioma", idiomas);
+    });
+</script> -->

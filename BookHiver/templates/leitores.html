@@ -1,0 +1,109 @@
+<div class="leitores-bar">
+    <div class="leitores-bar-itemData" id="listar-leitores" >
+        <!-- <img src="/static/img/listAll-icon.png" alt="listAll"> -->
+         {% if quantLeitores %}
+        <h3>Total de Leitores Cadastrados:</h3>
+        <p style="margin-left:10px; font-weight: 200;">{{ quantLeitores }} leitores</p>
+        {% else %}
+        <h3>Total de Leitores Cadastrados:</h3>
+        <p style="margin-left:10px; font-weight: 200;">Sem leitores cadastrados</p>
+        {% endif %}
+    </div>
+
+    <div class="leitores-bar-itemAdd" id="adicionar-leitor">
+        <img src="/static/img/add-icon.png" alt="Add">
+        <h3>Cadastrar Leitor</h3>
+    </div>
+</div>
+
+<div class="leitores-container" id="leitores-container">
+    <div class="leitores-search-bar">
+        <input type="text" id="searchLeitor" placeholder="Pesquisar leitor">
+        <button id="btn-pesquisar-leitor">Pesquisar</button>
+        <button id="btn-listar-todos-leitores">Listar Todos</button>
+    </div>
+
+    {% if error %}
+        <div class="errorAlert"> {{ error }}</div>
+    {% endif %}
+
+    {% if leitores %}
+    <div class="scroll-table">
+    <table class="leitores-table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+
+        <tbody id="leitores-tbody">
+            {% for leitor in leitores %}
+            <tr>
+                <td>{{ leitor[0] }}</td>
+                <td>{{ leitor[1] }}</td>
+                <td>{{ leitor[2] }}</td>
+                <td>
+                    <button class="edit-btn" onclick="abrirPopuoEdit('{{ leitor[3] }}', 1)">Editar</button>
+                    <button class="delete-btn" onclick="abrirPopupDelete('{{ leitor[3] }}', 1)">Excluir</button>
+                    <!-- <button class="delete-btn">Excluir</button> -->
+                    <button class="info-btn">Info</button>
+                </td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    {% else %}
+        <p style="margin-left: 10px;">Nenhum leitor encontrado.</p>
+    {% endif %}
+</div>
+
+
+<div class="popup-overlay" id="popupBookLivro">
+    <div class="popup">
+        <p>Tem certeza que deseja excluir?</p>
+        <button class="confirm" onclick="confirmarExclusao(1)">Excluir</button>
+        <button class="cancelar" onclick="fecharPopup(1)">Cancelar</button>
+    </div>
+</div>
+
+
+<div class="popupEdit-overlay" id="popupEditReader">
+    <div class="popupEdit">
+        <form>
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input id="nome" type="text" placeholder="Atualizar nome">
+            </div>
+
+            <div class="form-group">
+                <label for="cpf">CPF</label>
+                <input id="cpf" type="number" placeholder="Atualizar CPF">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="Atualizar email">
+            </div>
+
+            <div class="form-group">
+                <label for="fone">Telefone</label>
+                <input id="fone" type="number" placeholder="Atualizar telefone">
+            </div>
+
+            <div class="btn-area">
+                <button type="submit" class="btn btn-submit">Salvar</button>
+                <button type="button" class="btn btn-cancel" onclick="fecharPopup(1)">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>

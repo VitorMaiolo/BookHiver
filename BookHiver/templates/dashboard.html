@@ -1,0 +1,71 @@
+<div class="dashboard-container">
+    <!-- Seção para mostrar quantidade de livros no acervo -->
+    <div class="dashboard-item">
+        <div class="dashboardTitle">
+            <h3>Acervo Total</h3>
+            <img src="/static/img/book.png" alt="BookIcon">
+        </div>
+
+        {% if acervo %}
+        <div class="data">
+            <h3><span>{{ acervo }}</span> livros</h3>
+        </div>
+        {% endif %}
+        
+    </div>
+
+    <!-- Seção para mostrar quantidade de leitores cadastrados na biblioteca -->
+    <div class="dashboard-item">
+        <div class="dashboardTitle">
+            <h3>Leitores Cadastrados</h3>
+            <img src="/static/img/person.png" alt="BookIcon">
+        </div>
+
+        {% if leitores %}
+        <div class="data">
+            <h3><span>{{ leitores }}</span> leitores</h3>
+        </div>
+        {% endif %}
+
+    </div>
+
+    <!-- Seção para mostrar quantidade de empréstimos ativo no momento -->
+    <div class="dashboard-item">
+        <div class="dashboardTitle">
+            <h3>Empréstimos Ativos</h3>
+            <img src="/static/img/active.png" alt="BookIcon">
+        </div>
+        
+        {% if emprestimos %}
+        <div class="data">
+            <h3><span>{{ emprestimos }}</span> ativos</h3>
+            <button>Verificar Empréstimos</button>
+        </div>
+        {% else %}
+        <div class="data">
+            <h3><span>Sem empréstimos ativos</h3>
+        </div>
+        {% endif %}
+        
+    </div>
+
+    <!-- Seção para mostrar quantidade de emprestimosem atraso -->
+    <div class="dashboard-item">
+        <div class="dashboardTitle">
+            <h3>Empréstimos Atrasados</h3>
+            <img src="/static/img/timeoff.png" alt="BookIcon">
+        </div>
+        
+        {% if atrasados %}
+        <div class="data">
+            <h3><span>{{ atrasados }}</span> atrasados</h3>
+            <button>Verificar Atrasados</button>
+        </div>
+        {% else %}
+        <div class="data">
+            <h4><span>Sem empréstimos atrasados</h4>
+        </div>
+        {% endif %}
+        
+    </div>
+</div>
